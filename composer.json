@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Uniqoders\\Game\\": "./",
+      "Uniqoders\\Game\\": "./src",
       "Uniqoders\\Tests\\": "./tests"
     }
   }
