@@ -2,6 +2,7 @@
 
 namespace Uniqoders\Tests\Integration\Console;
 
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 use Uniqoders\Game\Console\GameCommand;
 use Uniqoders\Tests\Integration\IntegrationTestCase;
@@ -15,7 +16,7 @@ class GameCommandTest extends IntegrationTestCase
         $this->application->add(new GameCommand());
     }
 
-    public function test_game_command(): void
+    public function testGameCommand(): void
     {
         /**
          *******************
@@ -30,6 +31,6 @@ class GameCommandTest extends IntegrationTestCase
         ]);
 
         $output = $commandTester->getDisplay();
-        $this->assertSame([], $output);
+        $this->assertStringContainsString('+----------+-----------+-------+---------+', $output);
     }
 }
